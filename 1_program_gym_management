@@ -1,0 +1,74 @@
+package bm23ai164;
+
+import java.sql.SQLOutput;
+import java.util.Scanner;
+public class gym_membership {
+    String name=" ";
+    int age;
+    int fees=50;
+    int amt;
+    boolean status;
+    int duration;
+    int calc(int duration){
+        amt=duration*fees;
+        return amt;
+    }
+
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        gym_membership obj = new gym_membership();
+        System.out.println("Enter the number of people: ");
+        int n = sc.nextInt();
+        for(int i=1;i<=n;i++){
+            System.out.println("Enter the details of member "+i);
+            System.out.println("Enter the age: ");
+            obj.age = sc.nextInt();
+            System.out.println("Enter the name: ");
+            obj.name = sc.next();
+            System.out.println("Enter the duration: ");
+            obj.duration = sc.nextInt();
+            System.out.println("Enter the status of the member ");
+            obj.status = sc.nextBoolean();
+            obj.amt = obj.calc(obj.duration);
+            System.out.println("The final amt of member " +i +"to be paid is "+obj.amt);
+
+
+        }
+
+    }
+}
+
+
+Output:
+Enter the number of people: 
+3
+Enter the details of member 1
+Enter the age: 
+17
+Enter the name: 
+sg
+Enter the duration: 
+4
+Enter the status of the member 
+true
+The final amt of member 1to be paid is 200
+Enter the details of member 2
+Enter the age: 
+34
+Enter the name: 
+shreekar
+Enter the duration: 
+4
+Enter the status of the member 
+true
+The final amt of member 2to be paid is 200
+Enter the details of member 3
+Enter the age: 
+50
+Enter the name: 
+shankar
+Enter the duration: 
+8
+Enter the status of the member 
+true
+The final amt of member 3to be paid is 400
